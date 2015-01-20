@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         // We are good to go
         var done = this.async(),
             message = grunt.option('message') || '',
-            url = options.endpoint ? options.endpoint : 'https://' + options.domain + '.slack.com/services/hooks/incoming-webhook?token=' + options.token,
+            url = options.endpoint ? options.endpoint : 'https://' + options.domain + '.slack.com/services/' + options.token,
             data = {
                 channel: options.channel,
                 text: this.data.text.replace('{{message}}', message)
